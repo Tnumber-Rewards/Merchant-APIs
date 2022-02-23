@@ -1,9 +1,9 @@
 # Tnumber Rewards
 
-This is a bare-bones example of a Sinatra application providing a REST
-API to a DataMapper-backed model.
 
-The entire application is contained within the `app.rb` file.
+Get reward points from local stores or online stores every time you shop. For more info visit: 
+
+Single app to track and manage all your reward points in one place.
 
 `config.ru` is a minimal Rack configuration for unicorn.
 
