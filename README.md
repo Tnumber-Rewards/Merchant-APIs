@@ -1,4 +1,4 @@
-# Tnumber Loyalty & Rewards
+# Tnumber Rewards
 
 
 Get reward points from local stores or online stores every time you shop. For more info visit: 
@@ -13,40 +13,37 @@ documentation below.
 It uses `run-curl-tests.rb` which runs each command defined in
 `commands.yml`.
 
-## Install
+## Endpoints
 
-    bundle install
+    https://stage-retail.tnumber.co
 
-## Run the app
+## Authentication(Headers)
 
-    unicorn -p 7000
+    key:<YOUR-API-KEY>
 
-## Run the tests
+## Health Check
 
-    ./run-tests.sh
+    {{Base_URL}}/merchant/health
 
 # REST API
 
 The REST API to the example app is described below.
 
-## Get list of Things
+## Health Check
 
 ### Request
 
-`GET /thing/`
+`GET /health`
 
-    curl -i -H 'Accept: application/json' http://localhost:7000/thing/
+    curl --location --request GET 'https://stage-retail.tnumber.co/merchant/health' \--header 'key: <your api key here>'
+
+### Headers
+
+    key: <api key>
 
 ### Response
 
-    HTTP/1.1 200 OK
-    Date: Thu, 24 Feb 2011 12:36:30 GMT
-    Status: 200 OK
-    Connection: close
-    Content-Type: application/json
-    Content-Length: 2
-
-    []
+    {"message":"Healthy","status":true}
 
 ## Create a new Thing
 
@@ -346,4 +343,3 @@ The REST API to the example app is described below.
     Date: Thu, 24 Feb 2011 12:36:33 GMT
     Status: 204 No Content
     Connection: close
-
