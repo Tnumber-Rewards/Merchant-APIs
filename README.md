@@ -3,15 +3,8 @@
 
 Get reward points from local stores or online stores every time you shop. For more info visit: 
 
-Single app to track and manage all your reward points in one place.
+One app to track and manage all your reward points in one place.
 
-`config.ru` is a minimal Rack configuration for unicorn.
-
-`run-tests.sh` runs a simplistic test and generates the API
-documentation below.
-
-It uses `run-curl-tests.rb` which runs each command defined in
-`commands.yml`.
 
 ## Endpoints
 
@@ -23,7 +16,7 @@ It uses `run-curl-tests.rb` which runs each command defined in
 
 ## Health Check
 
-    {{Base_URL}}/merchant/health
+    /merchant/health
 
 # REST API
 
@@ -73,7 +66,7 @@ The REST API to the example app is described below.
             "_id": "61a8774ec23888abe2e9d8eb",
             "is_active": true,
             "member_since": "2021-12-02T07:35:42.076Z",
-            "phone_number": "9958808464",
+            "phone_number": "9100000000",
             "dob": "1997-08-15T00:00:00.000Z",
             "gender": "m",
             "name": "Jogn G",
@@ -90,7 +83,7 @@ The REST API to the example app is described below.
 
     curl --location --request POST 'https://stage-retail.tnumber.co/merchant/joinMembership' --header 'key: U2FsdGVkX18Fno4Ivsdl7XOmbjiDqTVBwTzVQU/qNd8xl2Fu4mBqvZWqwMLH/+n+' --header 'Content-Type: application/json' --data-raw '
     {
-        "phone_number": "9962472113",
+        "phone_number": "9100000000",
         "name": "John Dow",
         "dob": "2018-12-19"
     }'
@@ -104,7 +97,7 @@ The REST API to the example app is described below.
 `Content-Type: application/json`
     
     {
-        "phone_number": "9962472113",
+        "phone_number": "9100000000",
         "name": "John Dow",
         "dob": "2018-12-19"
     }
@@ -122,7 +115,7 @@ The REST API to the example app is described below.
 
 `GET /rewardHistory/<user_phone_number>`
 
-    curl --location --request GET 'https://stage-retail.tnumber.co/merchant/rewardHistory/9958808464' --header 'key: U2FsdGVkX19cnVpnMAIgNuC0/zwA1wUj594t6DFQSG/GltYgQtSel2BaZW2VNTla'
+    curl --location --request GET 'https://stage-retail.tnumber.co/merchant/rewardHistory/9100000000' --header 'key: U2FsdGVkX19cnVpnMAIgNuC0/zwA1wUj594t6DFQSG/GltYgQtSel2BaZW2VNTla'
 
 ### Headers
 
@@ -141,7 +134,7 @@ The REST API to the example app is described below.
         "data": [
             {
                 "_id": "61f517375ce3e11c3ab571a5",
-                "phone_number": "9958808464",
+                "phone_number": "9100000000",
                 "total_visits": 5,
                 "user_id": "61a8774ec23888abe2e9d8eb",
                 "location": null,
