@@ -1,4 +1,4 @@
-# Tnumber Rewards
+# Tnumber Loyalty & Rewards
 
 
 Get reward points from local stores or online stores every time you shop. For more info visit: 
