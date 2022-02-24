@@ -45,25 +45,39 @@ The REST API to the example app is described below.
 
     {"message":"Healthy","status":true}
 
-## Create a new Thing
+## User Profile
 
 ### Request
 
-`POST /thing/`
+`GET /userProfile/<user_phone_number>`
 
-    curl -i -H 'Accept: application/json' -d 'name=Foo&status=new' http://localhost:7000/thing
+    curl --location --request GET 'https://stage-retail.tnumber.co/merchant/userProfile/<user_phone_number>' --header 'key: <your api key here>'
+
+### Headers
+
+    key: <api key>
+
+### Params
+
+    /user_phone_number
 
 ### Response
 
-    HTTP/1.1 201 Created
-    Date: Thu, 24 Feb 2011 12:36:30 GMT
-    Status: 201 Created
-    Connection: close
-    Content-Type: application/json
-    Location: /thing/1
-    Content-Length: 36
-
-    {"id":1,"name":"Foo","status":"new"}
+    {
+    "message": "Successfully fetched the details.",
+    "status": true,
+    "data": {
+        "_id": "61a8774ec23888abe2e9d8eb",
+        "is_active": true,
+        "member_since": "2021-12-02T07:35:42.076Z",
+        "phone_number": "9958808464",
+        "dob": "1997-08-15T00:00:00.000Z",
+        "gender": "m",
+        "name": "Jogn G",
+        "referral_code": "aOPXh72147",
+        "image_initials": "JG"
+    }
+}
 
 ## Get a specific Thing
 
