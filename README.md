@@ -8,7 +8,7 @@ One app to track and manage all your reward points in one place.
 
 ## Endpoints
 
-    https://stage-retail.tnumber.co
+    https://api.tnumber.co
 
 ## Authentication(Headers)
 
@@ -28,7 +28,7 @@ The REST API to the example app is described below.
 
 `GET /health`
 
-    curl --location --request GET 'https://stage-retail.tnumber.co/merchant/health' \--header 'key: <your api key here>'
+    curl --location --request GET 'https://api.tnumber.co/merchant/health' \--header 'key: <your api key here>'
 
 ### Headers
 
@@ -47,7 +47,7 @@ The REST API to the example app is described below.
 
 `GET /userProfile/<user_phone_number>`
 
-    curl --location --request GET 'https://stage-retail.tnumber.co/merchant/userProfile/<user_phone_number>' --header 'key: <your api key here>'
+    curl --location --request GET 'https://api.tnumber.co/merchant/userProfile/<user_phone_number>' --header 'key: <your api key here>'
 
 ### Headers
 
@@ -81,7 +81,7 @@ The REST API to the example app is described below.
 
 `POST /joinMembership`
 
-    curl --location --request POST 'https://stage-retail.tnumber.co/merchant/joinMembership' --header 'key: U2FsdGVkX18Fno4Ivsdl7XOmbjiDqTVBwTzVQU/qNd8xl2Fu4mBqvZWqwMLH/+n+' --header 'Content-Type: application/json' --data-raw '
+    curl --location --request POST 'https://api.tnumber.co/merchant/joinMembership' --header 'key: <your api key here>' --header 'Content-Type: application/json' --data-raw '
     {
         "phone_number": "9100000000",
         "name": "John Dow",
@@ -115,7 +115,7 @@ The REST API to the example app is described below.
 
 `GET /rewardHistory/<user_phone_number>`
 
-    curl --location --request GET 'https://stage-retail.tnumber.co/merchant/rewardHistory/9100000000' --header 'key: U2FsdGVkX19cnVpnMAIgNuC0/zwA1wUj594t6DFQSG/GltYgQtSel2BaZW2VNTla'
+    curl --location --request GET 'https://stage-retail.tnumber.co/merchant/rewardHistory/9100000000' --header 'key: <your api key here>'
 
 ### Headers
 
@@ -147,7 +147,7 @@ The REST API to the example app is described below.
                 "store": {
                     "city": "Hyderabad",
                     "name": "Meenakshi Store",
-                    "logo_url": "https://tnumber-retail.s3.ap-south-1.amazonaws.com/undefined/1644814081000Minakshi.png",
+                    "logo_url": "hidden",
                     "category_id": 13
                 },
                 "category": {
