@@ -43,7 +43,10 @@ The REST API to the example app is described below.
 
 ### Response
 
-    {"message":"Healthy","status":true}
+    {
+         "message":"Healthy",
+         "status":true
+    }
 
 ## User Profile
 
@@ -64,39 +67,54 @@ The REST API to the example app is described below.
 ### Response
 
     {
-    "message": "Successfully fetched the details.",
-    "status": true,
-    "data": {
-        "_id": "61a8774ec23888abe2e9d8eb",
-        "is_active": true,
-        "member_since": "2021-12-02T07:35:42.076Z",
-        "phone_number": "9958808464",
-        "dob": "1997-08-15T00:00:00.000Z",
-        "gender": "m",
-        "name": "Jogn G",
-        "referral_code": "aOPXh72147",
-        "image_initials": "JG"
+        "message": "Successfully fetched the details.",
+        "status": true,
+        "data": {
+            "_id": "61a8774ec23888abe2e9d8eb",
+            "is_active": true,
+            "member_since": "2021-12-02T07:35:42.076Z",
+            "phone_number": "9958808464",
+            "dob": "1997-08-15T00:00:00.000Z",
+            "gender": "m",
+            "name": "Jogn G",
+            "referral_code": "aOPXh72147",
+            "image_initials": "JG"
     }
 }
 
-## Get a specific Thing
+## Join Store Membership
 
 ### Request
 
-`GET /thing/id`
+`POST /joinMembership`
 
-    curl -i -H 'Accept: application/json' http://localhost:7000/thing/1
+    curl --location --request POST 'https://stage-retail.tnumber.co/merchant/joinMembership' --header 'key: U2FsdGVkX18Fno4Ivsdl7XOmbjiDqTVBwTzVQU/qNd8xl2Fu4mBqvZWqwMLH/+n+' --header 'Content-Type: application/json' --data-raw '
+    {
+        "phone_number": "9962472113",
+        "name": "John Dow",
+        "dob": "2018-12-19"
+    }'
+
+### Headers
+
+    key: <api key>
+
+### Body
+
+`Content-Type: application/json`
+    
+    {
+        "phone_number": "9962472113",
+        "name": "John Dow",
+        "dob": "2018-12-19"
+    }
 
 ### Response
 
-    HTTP/1.1 200 OK
-    Date: Thu, 24 Feb 2011 12:36:30 GMT
-    Status: 200 OK
-    Connection: close
-    Content-Type: application/json
-    Content-Length: 36
-
-    {"id":1,"name":"Foo","status":"new"}
+    {
+        "message": "Successfully Joined Membership.",
+        "status": true
+    }
 
 ## Get a non-existent Thing
 
